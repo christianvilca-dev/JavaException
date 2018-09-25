@@ -5,13 +5,16 @@
  */
 package com.christianvilca.Excepciones;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
 /**
  *
  * @author Christian
  */
 public class Excepcion1 {
 //    try{} 
-//    catch{}   ->  Parametro que identifica la excepcion a manejar
+//    catch{}   ->  Recibe un argumento del tipo de excepcion que se genera
+//                  Parametro que identifica la excepcion a manejar
 //                  Se realiza algun proceso
 //                  Opcional si no esta "finaly{}"
 //                  Pueden haber varios catch
@@ -24,4 +27,26 @@ public class Excepcion1 {
 //                  que solicito un proceso especifico)
 //    throw     ->  Lanza una excepcion para que sea manejada en un bloque
 //                  try catch
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Programa para dividir");
+        System.out.println();
+        try {
+            int n, d, r,s;
+            System.out.print("Ingrese numero: ");
+            n= sc.nextInt();
+            System.out.print("Ingrese numero: ");
+            d= sc.nextInt();
+            r= n/d;
+            System.out.println("Resultado: "+r);
+        } catch (ArithmeticException ae) {
+            System.out.println("No se puede dividir entre cero");
+        } catch (InputMismatchException ime){
+            System.out.println("Solo se pueden ingresar numeros");
+        } finally { // Util para cerrar conexiones a BD
+            System.out.println("Muchas gracias, hasta luego.");
+        }
+        
+    }
 }

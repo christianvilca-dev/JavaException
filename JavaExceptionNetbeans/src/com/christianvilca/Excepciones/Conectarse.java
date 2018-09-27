@@ -20,7 +20,7 @@ public class Conectarse {
     
     public void conectar() {
         try {
-            Class.forName("org.postgresql.Driver"); // https://jdbc.postgresql.org/
+            Class.forName("org.una.Driver"); // https://jdbc.postgresql.org/
             String url="jdbc:postgresql://localhost:5432/test"; //5432 
             Properties props = new Properties();
 //            props.setProperty("user","postgres");
@@ -34,10 +34,8 @@ public class Conectarse {
                 System.out.print("\t");
                 System.out.println("Nombre: " + resultados.getString(2));
             }
-        } catch (ClassNotFoundException cnfe) {
-            System.out.println("Clase no encontrada");
-        } catch (SQLException sqle){
-            System.out.println("Error de sql: "+sqle.getMessage());
+        } catch (ClassNotFoundException | SQLException myException) {
+            System.out.println("Excepcion encontrada: " + myException.getMessage());
         }
     }
     

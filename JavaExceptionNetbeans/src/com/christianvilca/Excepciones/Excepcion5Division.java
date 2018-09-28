@@ -13,7 +13,12 @@ public class Excepcion5Division {
     public void dividir(){
         // No tiene try catch porque "Excepcion5" es una excepcion no verificada
         // No es obligatorio, pero es necesario para atrapar la excepcion y que no se detenga el programa
-        divide(10,1); 
+        try {
+            divide(10,1); 
+        } catch (Excepcion5 edu) {
+            System.out.println(edu.getMessage());
+        }
+        System.out.println("Terminado");
     }
     
     // si encuentra una excepcion lanzara Excepcion5
@@ -26,8 +31,12 @@ public class Excepcion5Division {
     }
     
     public static void main(String[] args) {
-        new Excepcion5Division().dividir();
+        new Excepcion5Division().dividir(); 
     }
+    ////////////////////////////////////////////////
+//    RESULTADO DEL TRY CATCH EN EL METODO "dividir()"
+//    No voy a No voy a dividir por uno.
+//    Terminado
     ////////////////////////////////////////////////
 //    run:
 //Exception in thread "main" com.christianvilca.Excepciones.Excepcion5: No voy a No voy a dividir por uno.

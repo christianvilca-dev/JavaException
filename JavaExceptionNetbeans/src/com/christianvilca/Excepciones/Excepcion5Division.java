@@ -24,7 +24,7 @@ public class Excepcion5Division {
     // si encuentra una excepcion lanzara Excepcion5
     public void divide(int a, int b) throws Excepcion5{ // "Excepcion5" es una excepcion no verificada
         if (b==1) {
-            throw new Excepcion5();
+            throw new Excepcion5("Dividir po uno no es un reto, ");
         } else {
             System.out.println(a/b);
         }
@@ -33,6 +33,10 @@ public class Excepcion5Division {
     public static void main(String[] args) {
         new Excepcion5Division().dividir(); 
     }
+        ////////////////////////////////////////////////
+//    RESULTADO PASANDO EL PARAMENTRO A LA CLASE "Excepcion5"
+//    Dividir po uno no es un reto, No voy a dividir por uno.
+//    Terminado
     ////////////////////////////////////////////////
 //    RESULTADO DEL TRY CATCH EN EL METODO "dividir()"
 //    No voy a No voy a dividir por uno.
